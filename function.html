@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+
+<body>
+    <script>
+        // Function tanpa parameter
+        function sayHelloWorld() {
+            document.writeln("Hello World!")
+        }
+        sayHelloWorld();
+
+        // Function dengan parameter
+        function sayHello(firstName, lastName) {
+            document.writeln(`<p>Hello, ${firstName} ${lastName}!</p>`);
+        }
+        sayHello("Ade", "Kurniawan");
+
+        //Function dengan parameter dan return
+        function returnSayHi(firstName, lastName) {
+            const say = `<p>Hi, ${firstName} ${lastName}!</p>`;
+            return say;
+        }
+        const result = returnSayHi("Ade", "Kurniawan");
+        document.writeln(result);
+
+        //Function dengan parameter dan return dengan array dan if
+        function arrayContains(array, searchValue) {
+            for (const element of array) {
+                if (element === searchValue) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        //Function dengan default parameter
+        function register(Name, Gender = "Unknown"){
+            console.info(`<p>Name: ${Name}</p>`);
+            console.info(`<p>Gender: ${Gender}</p>`);
+        }
+        register("Ade", "Laki-laki");
+
+        console.info(arrayContains([1,2,3,4,5,6,7,8,9,10], 5));
+
+        // Function dengan rest parameter (parameter tidak terbatas)
+        function sum(name, ...data){
+            let total = 0;
+            for (const item of data){
+                total += item;
+            }
+            document.writeln(`<p>${name}: ${total}</p>`)
+        }
+
+        sum("Orange", 1,2,3,4,5);
+
+        //Function dengan rest parameter berupa array
+        const jumlahJeruk = [5,4,3,2,1]
+        sum("Jeruk", ...jumlahJeruk);
+    </script>
+</body>
+
+</html>

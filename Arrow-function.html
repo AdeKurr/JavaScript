@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+
+<body>
+    <script>
+        //Cara 1
+        const sayHello = (name) => {
+            const say = `Hello ${name}`;
+            console.info(say);
+        }
+        sayHello("Ade");
+
+        //Cara 2
+        const sayHello2 = (name) => console.info(`Hi ${name}`);
+        sayHello2("Ade");
+
+        //Arrow Function juga bisa mengembalikan value!
+        const sum = (first, second) => first+second;
+        console.info(sum(1, 15));
+
+        //Arrow function sebagai parameter
+        function giveMeName (callback){
+            callback("Ade");
+        }
+
+        giveMeName((name) => console.info(`Hello, ${name}`));
+
+
+    </script>
+</body>
+
+</html>

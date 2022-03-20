@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THIS!</title>
+</head>
+
+<body>
+    <script>
+        //Jika this digunakan di global maka akan merespon sebagai window
+        console.info(this);
+
+        function sample() {
+            console.info(this);
+
+            function inner() {
+                console.info(this);
+            }
+            inner();
+        }
+        sample();
+
+        //Jika di dalam object, maka this akan mereferensi ke object tersebut
+        const person = {
+            name: "Ade",
+            sayHello: function (value) {
+                console.info(`Hello ${value}, my name is ${this.name}`);
+            }
+        }
+        person.sayHello("Meong")
+
+
+
+    </script>
+</body>
+
+</html>

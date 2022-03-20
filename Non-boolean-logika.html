@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logika non-boolean</title>
+</head>
+
+<body>
+    <script>
+
+        //Operator OR (||) mengambil yang true. Jika tidak ada, maka ambil false yang kiri
+
+        console.info("Hello" || ""); //truthy kiri
+        console.info("" || []); //truthy kanan
+        console.info("0" || "NOL"); //truthy kiri kanan, diambil yang pertama dari kiri
+        console.info(0 || "NOL"); //truthy kanan
+        console.info(null || "NULL"); //truthy kanan
+        console.info(undefined || "UNDEFINED"); //truthy kanan
+        console.info(0 || false); //truthy kanan
+
+        //Operator AND (&&) mengambil yang false, jika tidak ada, diambil yang terakhir (paling kanan)
+
+        console.info("Hello" && ""); //falsy kanan
+        console.info("" && []); //falsy kiri
+        console.info("0" && "NOL"); //truthy kiri kanan, diambil yang pertama dari kanan
+        console.info(0 && "NOL"); //falsy kiri
+        console.info(null && "NULL"); //falsy kiri
+        console.info(undefined && "UNDEFINED"); //falsy kiri
+        console.info(0 && false); //falsy kiri
+    </script>
+</body>
+
+</html>
